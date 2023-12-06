@@ -1,0 +1,27 @@
+ALGORITHM Sum_of_distinct_elements
+VAR
+    set1, set2, combinedSet, distinctElements : ARRAY OF INTEGER; 
+    sumDistinct : INTEGER := 0;
+    i : INTEGER;
+
+BEGIN
+    // Example sets
+    set1 := [3, 1, 7, 9];
+    set2 := [2, 4, 1, 9, 3];
+
+    // Combine the two sets
+    combinedSet := set1 + set2;
+
+    // Use a set to store distinct elements 
+    FOR i FROMM 1 TO LENGTH(combinedSet) DO 
+    IF combinedSet[i] NOT repeat it IN combinedSet THEN 
+    distinctElements := distinctElements + [combinedSet[i]];
+    END_IF 
+    END_FOR 
+    // Calculate the sum of distinct elements
+    FOR i FROM 1 TO LENGTH(distinctElements) DO 
+    sumDistinct := sumDistinct + distinctElements[i];
+    END_FOR 
+
+    Write (sumDistinct);
+END

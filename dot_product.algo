@@ -1,0 +1,59 @@
+PROCEDURE dot_product(v1, v2: vector of R, ps:real)
+VAR
+    i := INTEGER
+    ps : INTEGER := 0;
+BEGIN
+    FOR i FROM 1 TO LENGTH(v1) DO 
+    ps = ps + (v1[i] * v2[i])
+    END_FOR
+END
+
+// Algorithm: CheckOrthogonality (procedure)
+
+ALGORITHM CheckOrthogonality
+VAR
+    n : INTEGER ;
+    i, ps : INTEGER;
+BEGIN
+    FOR i FROM 1 TO n DO 
+    Read vectors v1 and v2 of R 
+    Call dot_product(v1, v2, ps)
+    IF ps = 0 THEN 
+    Write "vectors are orthogonal"
+    ELSE 
+    Write "vectors are not orthogonal"
+    END_IF
+    END_FOR
+END
+
+// Function 
+
+FUNCTION dot_product(v1, v2: vector of R) : real
+VAR
+    i := INTEGER;
+    ps : INTEGER := 0;
+BEGIN
+    FOR i FROM 1 TO LENGTH(v1) DO 
+    ps = ps + (v1[i] * v2[i])
+    END_FOR
+    RETURN ps ;
+END
+
+// Algorithm: CheckOrthogonality (function)
+
+ALGORITHM CheckOrthogonality
+VAR
+    n : INTEGER;
+    i : INTEGER;
+    ps : INTEGER := 0;
+BEGIN
+    FOR i FROM 1 TO n DO 
+    Read vectors v1 and v2 of R 
+    ps FROM dot_product(v1, v2)
+    IF ps = 0 THEN 
+    Write "vectors are orthogonal"
+    ELSE 
+    Write "vectors are not orthogonal"
+    END_IF 
+    END_FOR
+END
